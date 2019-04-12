@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Technical Documentation Page</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<nav id="nav-bar">
+		<header>JS Documentation</header>
+	  <ul>
+		
+		<a href="#overview" class="nav-link"><li>Overview</li></a>
+		<a href="#introduction" class="nav-link"><li>Introduction</li></a>
+		<a href="#essentials" class="nav-link"><li>Essentials</li></a>
+		<a href="#variables" class="nav-link"><li>Variables</li></a>
+		<a href="#conditionals" class="nav-link"><li>Conditionals</li></a>
+		<a href="#loops" class="nav-link"><li>Loops</li></a>
+		<a href="#objects" class="nav-link"><li>Objects</li></a>
+		<a href="#advanced-objects" class="nav-link"><li>Advanced Objects</li></a>
+		<a href="#arrays" class="nav-link"><li>Arrays</li></a>
+		<a href="#functions" class="nav-link"><li>Functions</li></a>
+		<a href="#json" class="nav-link"><li>JSON</li></a>
+		<a href="#reference" class="nav-link"><li>Reference</li></a>
+
+	  </ul>	
+		
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="overview">
+			<header>Overview</header>
+			<article>
+				<p>This JavaScript tutorial covers the basics as well as more advanced topics including Inheritance, Immediate Functions, Prototypes, Closures, Currying, Namespaces, and more. Upon completion you will be comfortable adding robust JavaScript functionality to your web pages</p>
+				<p>However, building world-class web apps requires skills that go beyond this tutorial. For that you will need our JavaScript + jQuery Design Pattern FrameworkTM which teaches how to write robust, maintainable, and beautiful web apps using proven design patterns and pattern architectures. To learn more click here</p>
+				<p>Both this tutorial and our JavaScript + jQuery Design Pattern FrameworkTMcome with code samples that demonstrate the concepts in action. Each time you see a 'Run' button, it will execute the code displayed, like so:</p>
+				<code>
+					1.	alert("I am ready to run!");
+				</code>
+			</article>
+		</section>
+		<section class="main-section" id="introduction">
+			<header>Introduction</header>
+			<article>
+			<p>JavaScript is the language of the Web. It was introduced in 1995 by Netscape, the company that created the first browser by the same name. Other browsers followed, and JavaScript quickly gained acceptance as the de-facto client-side scripting language on the internet. Today it is used by millions of websites to add functionality and responsiveness, validate forms, communicate with the server, and much more.</p>
+			<p>Originally, JavaScript was named LiveScript but was renamed JavaScript as a marketing strategy to benefit from the exploding popularity of the Java programming language at that time. As it turned out, Java evolved into a server-side language and did not succeed on the browser, whereas JavaScript did. The change of name is unfortunate because it has caused a lot of confusion.</p>
+		</article>
+		</section>
+		<section class="main-section" id="essentials">
+			<header>Essentials</header>
+			<article>
+			<p>JavaScript is case-sensitive. Keywords such as for and function, must be in their proper case (i.e. lowercase) and not Forand Function, or FOR and FUNCTION. Similarly, totalamount, totalAmount, TotalAmount, and totalAMOUNT are 4 distinct variable names in JavaScript.</p>
+			<p>When using JavaScript on the browser it is important to realize that HTML is not case-sensitive which may lead to some confusion. For instance, event attribute names can be typed in any case in HTML, so both onclick and onClick work. In JavaScript, it is typically all lowercase.</p>
+			<code>
+					<!-- the same -->
+				1. a href="index.html" onclick="handler();<br>
+				2. a href="index.html" onClick="handler();
+
+			</code>
+			</article>
+		</section>
+		<section class="main-section" id="variables">
+			<header>Variables</header>
+			<article>
+			<p>JavaScript supports only a handful of data types. The primitive types are number, string, Boolean, and two special types: null and undefined. These are referred to as primitive types because they are the basic, ready-to-use variable types that are built into the language.</p>
+			<code>
+				1.	var a = 10; <br>    
+				2.	var b = 10.0;<br>
+				3.	var c = 1e1;<br>
+				4.	alert(a === b);<br>
+				5.	alert(a === c);<br>
+				6.	alert(b === c); 
+			</code>
+			<p>JavaScript's strings are immutable sequences of characters. String literals are enclosed by single or double quotes, like so: "Hello" or 'Hello'. Once created a string cannot be changed (this is what immutable refers to). However, it is easy to create a new string by manipulating existing strings, such as: "Hello".substr(3), which creates a new string with "lo" as its value. JavaScript does not support the single character (char) type, but you can easily use a single character string, such, as "a", or "Y".</p>
+			<p>Here are some string examples:</p>
+			<code>
+				1.	var s = "Hello World";<br>
+				2.	var t = s.substr(6);<br>
+				3.	alert(t);
+
+			</code>
+			</article>
+		</section>
+
+		<section class="main-section" id="conditionals">
+			<header>Conditionals</header>
+			<article>
+			<h2>if statement</h2>
+			<p>The if statement executes a block of code if the conditional expression inside a pair of parentheses evaluates to true. The conditions typically involve comparison of variables for equality or inequality. Here is a simple example:</p>
+			<code>
+				1.	var person = { age: 33 }; <br>
+				2.	if (person.age &gt= 18) { <br>
+				3.	    alert ("Adult"); <br>      
+				4.	    alert ("Allowed to vote");
+				5.	}
+
+			</code>
+			<p>The block of code that executes following the if-statement can be a single statement or multiple statements enclosed by curly braces, {}.</p>
+			<h2>if…else statement</h2>
+			<p>The if-statement may contain an optional else clause that specifies an alternative course of action. The else clause is executed if the expression in the if-statement is evaluated to false.</p>
+			<code>
+				1.	var password = "secret"; <br>
+				2.	if (password.length &gt= 7) { <br>
+				3.	   alert("okay"); <br>
+				4.	} else { <br>
+				5.	   alert("Number of characters in your password must be at least 7."); <br>
+				6.	   return false;
+				7.	}
+			</code>
+			<h2>if…else if…else statement</h2>
+			<p>If you need to test multiple conditions then if…else if…else is what you can use. If the condition associated with the if statement is true, the statements inside the if block are executed. If the condition is false, each else-if statement is evaluated in the order in which they appear. When a true else-if condition is found, the statements inside that else-if block are executed. If no else-if condition is evaluated to true, the statements inside the else block are executed</p>
+			<code>
+				1.	var age = 34; <br>
+				2.	if (age &lt 13) { <br>
+				3.	    alert("child"); <br>
+				4.	} else if (age &lt 19) { <br>
+				5.	    alert("adolescent"); <br>
+				6.	} else { <br>
+				7.	    alert("adult"); <br>
+				8.	}
+			</code>
+			</article>
+		</section>
+
+
+		<section class="main-section" id="loops">
+			<header>Loops</header>
+			<article>
+			<h2>While loop</h2>
+			<p>JavaScript loops are used to repeatedly run a block of code - until a certain condition is met. When developers talk about iteration or iterating over, say, an array, it is the same as looping. JavaScript offers several options to repeatedly run a block of code, including while, do while, for and for-in.</p>
+			<p>Here is an example of a JavaScript while loop:</p>
+			<code>
+				1.	var sum = 0;<br>
+				2.	var number = 1;<br>
+				3.	while (number &lt= 50) { <br>
+				4.	  sum += number;<br>
+				6.	}<br>
+				7.	alert("Sum = " + sum);
+			</code>
+			<p>The condition is first evaluated. If true, the block of statements following the while statement is executed. This is repeated until the condition becomes false. This is known as a pre-test loop because the condition is evaluated before the block is executed.</p>
+			<p>The number++ statement is called the updater. Removing it will result in an infinite loop. You must always include a statement in a loop that guarantees the termination of the loop or else you'll run into this problem.</p>
+			<h2>do-while loop</h2>
+			<p>Here is an example of a JavaScript do-while loop:</p>
+			<code>
+				1.	var sum = 0;<br>
+				2.	var number = 1;<br>
+				3.	do {<br>
+				4.	   sum += number;<br>
+				5.	   number++;<br>
+				6.	} while (number &lt= 50);<br>
+				7.	alert("Sum = " + sum);    
+			</code>
+			<p>The block following do is executed first and then the condition is evaluated. If the while condition is true, the block is executed again and repeats until the condition becomes false. This is known as a post-test loop as the condition is evaluated after the block has executed.</p>
+			<p>The do-while loop is executed at least once whereas the while loop may not execute at all. The do-while is typically used in a situation where the body of a loop contains a statement that generates a value that you want to use in your conditional expression, like this:</p>
+			<code>
+				1.	do {<br>
+				2.<br>
+				3.	} while (if ch === '0');
+
+			</code>
+			</article>
+		</section>
+		<section class="main-section" id="objects">
+			<header>Objects</header>
+			<article>
+			<h2>Creating objects with object literals</h2>
+			<p>A JavaScript object is a collection of properties where each property has a name and a value, similar to Hash, Map, or Dictionary in other languages. The name of a property can be any string, including an empty string. The value can be any value, such as a string, Boolean, number, and null, but it cannot be undefined. The object's properties can be defined even after you start using the object. But first, let's look at how we create objects in JavaScript</p>
+			<p>The easiest way is to create a new object is with object literal notation which is bracketed by a pair of curly braces: {}. Properties and their values can be added as you go. In the example below we create an empty object, using object literal notation, and we are adding two properties after that:</p>
+			<code>
+				1.	var rect = {};<br>
+				2.	rect.width = 20;<br>
+				3.	rect.height = 10;<br>
+				4.	alert(rect.width);<br>
+				5.	alert(rect.height);     
+			</code>
+			</article>
+		</section>
+		<section class="main-section" id="advanced_objects">
+			<header>Advanced Objects</header>
+			<article>
+			<h2>JavaScript and namespaces</h2>
+			<p>Unlike many other languages, JavaScript does not support namespaces. Namespaces are important because they help reduce the number of identifiers for variables, objects, and functions that are added to the global scope in your application. JavaScript is a flexible language and there are ways to work around this limitation and implement your own namespaces. First, let's explore the need for namespaces a bit more.</p>
+			<p>In JavaScript, all the code shares a single global namespace which is simply a single global object that holds all global variables and functions as properties. In the browser this is the window object. This tends to pollute the global scope if you have many objects. In the example below, num, obj, str, total, numr, and sum are all added to the global object:</p>
+			<code>
+				1.	var num = 5;<br>
+				2.	var obj = {};<br>
+				3.	var str = "Good morning";<br>
+				4.	function sum(x, y){<br>
+				5.	   total = x + y;<br>
+				6.	   return total;<br>
+				7.	}<br>
+				8.	numr = sum(4,3);
+			</code>
+			<p>Anything that is not properly declared, such as undeclared function variables, also ends up on the global object. In the example above, the identifiers num, obj, str, and sum are properly declared using the var keyword, but the function scoped variable total is missing a var and numr is a misspelling of num. JavaScript will add both total and numr to the global name space, which most likely is not what you want.</p>
+			</article>
+		</section>
+		<section class="main-section" id="arrays">
+			<header>Arrays</header>
+			<article>
+			<h2>Creating arrays in JavaScript</h2>
+			<p>Creating arrays in JavaScript is easy with the array literal notation. It consists of two square brackets that wrap optional array elements separated by a comma. Array elements can be any type, including number, string, Boolean, null, undefined, object, function, regular expression and other arrays. Here are some examples:</p>
+			<code>
+				1.	// empty array with no elements <br>		
+				2.	var empty = [];         <br>              
+				3.	// array with 2 string elements<br>
+				4.	var days = ["Sunday", "Monday"];   <br>   
+				5.	// array with elements of different types<br>
+				6.	var mixed = [false, 2.70, "Hello"];   <br>
+				7.	// elements can be arbitrary expressions<br>
+				8.	var suffix = "tree";<br>
+				9.	var trees = ["Oak" + suffix, "Elm" + suffix];  <br>
+				10.	// 2 dimensional array with object literals<br>
+				11.	var array2 = [[1,{x:1, y:2}], [2, {x:3, y:4}]]; <br>   
+				12.	// the 3rd element is undefined<br>
+				13.	var colors = ["Red", "Green", undefined]; <br>   
+				14.	// no value in the 1st element, it is undefined<br>
+				15.	var hobbies = [,"Art"]; 
+
+			</code>
+			</article>
+		</section>
+		<section class="main-section" id="functions">
+			<header>Functions</header>
+			<article>
+			<h2>Declaring JavaScript functions</h2>
+			<p>Functions, as reusable blocks of code, are fully supported in JavaScript. Here is an example of a simple function declaration:</p>
+			<code>
+				1.	function say(name) { <br>
+				2.	    alert("Hello " + name);<br>
+				3.	}         <br>
+				4.	say("Nico");              
+			</code>
+			<p>The above function declaration starts with the keyword function. Next we have say, which is the function's name. Following the name is a comma-separated list of zero or more parameters enclosed by parentheses: (). In our example we have one parameter named name. These parameters behave like local variables inside the function body. The function body comprises a set of JavaScript statements enclosed by curly braces: {}. The body executes when the function is invoked by issueing its name followed by parenthesis (with possible arguments), like say("Nico");.</p>
+			<p>Function declarations can appear in the top-level JavaScript program itself, just like our say example. However, functions can also be nested within other functions, like so.</p>
+			<code>
+				1.	function hypotenuse(m, n) {        // outer function  <br>
+				2.	    function square(num) {         // inner function<br>
+				3.	       return num * num; <br>
+				4.	    }<br>
+				5.	    return Math.sqrt(square(m) + square(n));<br>
+				6.	}<br>
+				7.	alert(hypotenuse(3,4));            
+			</code>
+			<p>The outer function hypotenuse contains an inner function square. The square function is visible only within the hypotenusefunction body, that is, square has function scope only. The easiest way to look at square is as a private helper function to the outer function.</p>
+			</article>
+		</section>
+		<section class="main-section" id="json">
+			<header>JSON</header>
+			<article>
+			<h2>What is JSON?</h2>
+			<p>JSON stands for JavaScript Object Notation. It is an open, text-based format designed for lightweight data exchange between different systems. JSON is a subset of JavaScript's object literal notation representing simple data structures and objects. The array elements and object member values in JSON are limited to numbers, strings, Boolean values, objects, arrays, and null. This is different from JavaScript object literals where values of array elements and object members can be any JavaScript expression, including function definitions</p>
+			<p>The beauty of JSON standard lies in its simplicity and the fact that it is very compact. Let's look at an example. Here we have the JSON representation of a student object.</p>
+			<code>
+				1.	{ <br>
+				2.	   "firstName": "Kim", <br>
+				3.	   "lastName": "Taylor",<br>
+				4.	   "studentCode": 7<br>
+				5.	}
+			</code>
+			<p>JSON objects can be nested. Below is a student including its image, which is an object itself:</p>
+			<code>
+				1.	{<br>
+				2.	   "firstName": "Kim", <br>
+				3.	   "lastName": "Taylor",<br>
+				4.	   "studentCode": 7,<br>
+				5.	   "image":<br>
+				6.	    {<br>
+				7.	        "url": "images/007.jpg",<br>
+				8.	        "width": 150,<br>
+				9.	        "height": 150<br>
+				10.	    }<br>
+				11.	}
+
+			</code>
+			<p>A JSON-formatted string always has a single top-level item which is either an object, with curly braces {}, or an array, with square brackets []. The earlier examples are objects. The next example shows an array with three elements:</p>
+			<code>
+				1.	[ <br>
+				2.	    "Red", <br>
+				3.	    "Green", <br>
+				4.	    "Blue" <br>
+				5.	] <br>
+
+			</code>
+			<p>JSON doesn't natively represent complex data types like functions, date, and time. To represent date and time values, you can either use an ISO-formatted string or a number (number of milliseconds in UTC since January 1, 1970). Note that these are just conventions: JSON standard does not dictate rules for encoding date and time values</p>
+			</article>
+		</section>
+		  <section class="main-section" id="reference">
+		    <header>Reference</header>
+		    <article>
+		      <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
+		    </article>
+		    </section>
+	</main>
+</body>
+</html>
